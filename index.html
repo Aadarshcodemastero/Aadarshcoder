@@ -105,6 +105,25 @@
     }
   
   </style>
+  <script>
+  const sections = document.querySelectorAll("section");
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const boxTop = section.getBoundingClientRect().top;
+
+      if (boxTop < triggerBottom) {
+        section.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
 </head>
 <body>
 
@@ -163,4 +182,5 @@
 
 </body>
 </html>
+
 
